@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Login / Register</title>
+    <link rel="stylesheet" href="login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="animation-container">
+            <svg class="heartbeat-animation" viewBox="0 0 100 100">
+                <path class="heart-path" d="M 50 20 C 70 0, 90 20, 80 40 L 50 70 L 20 40 C 10 20, 30 0, 50 20 Z" />
+                <polyline class="ecg-line" points="0 50, 20 50, 25 45, 30 55, 35 50, 45 50, 50 60, 55 40, 60 50, 80 50, 100 50" />
+            </svg>
+            <p class="animation-text">Your Health, Our Priority</p>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form-box" id="login-box">
+                <h2>Login to Clinic Portal</h2>
+                <form id="login-form">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Login</button>
+                </form>
+
+                <div class="form-footer">
+                    Don't have an account? <a href="#" id="show-register">Register here</a>
+                </div>
+            </div>
+
+            <div class="form-box hidden" id="register-box">
+                <h2>Register for Clinic Portal</h2>
+                <form id="register-form">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="register-name" placeholder="Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="register-surname" placeholder="Surname" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="register-id-number" placeholder="ID Number (13 digits)" maxlength="13" pattern="[0-9]{13}" title="ID Number must be 13 digits" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="register-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Register</button>
+                </form>
+                <div class="form-footer">
+                    Already have an account? <a href="#" id="show-login">Login here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login_script.js"></script>
+</body>
+</html>
