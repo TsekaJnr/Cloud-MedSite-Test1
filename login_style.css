@@ -1,0 +1,552 @@
+:root {
+    --primary-blue: #007bff;
+    --light-blue: #e0f2ff;
+    --white: #ffffff;
+    --dark-gray: #333;
+    --medium-gray: #666;
+    --border-color: #ddd;
+    --google-red: #ea4335;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--dark-gray);
+    overflow: hidden; /* Prevent scrollbar from animation */
+}
+
+.main-wrapper {
+    display: flex;
+    width: 90%; /* Adjust as needed */
+    max-width: 1000px; /* Max width for the entire container */
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--box-shadow);
+    overflow: hidden; /* Ensures inner elements stay within bounds */
+}
+
+.animation-container {
+    flex: 1; /* Takes up available space */
+    background: linear-gradient(to bottom right, var(--primary-blue), #0056b3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* For text positioning */
+    overflow: hidden; /* For animations */
+}
+
+.animation-text {
+    color: var(--white);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+/* SVG Styles */
+.heartbeat-animation {
+    width: 150px;
+    height: 150px;
+}
+
+.heart-path {
+    fill: #ff4d4d; /* Red color for heart */
+    stroke: #cc0000;
+    stroke-width: 2;
+    transform-origin: 50% 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.ecg-line {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100; /* Adjust based on path length */
+    stroke-dashoffset: 100;
+    animation: drawEcg 3s infinite linear;
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes drawEcg {
+    0% { stroke-dashoffset: 100; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -100; }
+}
+
+
+.form-wrapper {
+    flex: 1; /* Takes up available space */
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* To stack login/register boxes */
+    justify-content: center; /* Center form vertically */
+}
+
+
+.form-box {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-box.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--medium-gray);
+}
+
+.input-group input {
+    width: calc(100% - 60px); /* Adjust for icon and padding */
+    padding: 12px 15px 12px 45px; /* Left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    margin-top: 20px;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.social-login {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.social-login p {
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+
+
+.form-footer {
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: var(--medium-gray);
+}
+
+.form-footer a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}:root {
+    --primary-blue: #007bff;
+    --light-blue: #e0f2ff;
+    --white: #ffffff;
+    --dark-gray: #333;
+    --medium-gray: #666;
+    --border-color: #ddd;
+    --google-red: #ea4335;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--dark-gray);
+    overflow: hidden; /* Prevent scrollbar from animation */
+}
+
+.main-wrapper {
+    display: flex;
+    width: 90%; /* Adjust as needed */
+    max-width: 1000px; /* Max width for the entire container */
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--box-shadow);
+    overflow: hidden; /* Ensures inner elements stay within bounds */
+}
+
+.animation-container {
+    flex: 1; /* Takes up available space */
+    background: linear-gradient(to bottom right, var(--primary-blue), #0056b3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* For text positioning */
+    overflow: hidden; /* For animations */
+}
+
+.animation-text {
+    color: var(--white);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+/* SVG Styles */
+.heartbeat-animation {
+    width: 150px;
+    height: 150px;
+}
+
+.heart-path {
+    fill: #ff4d4d; /* Red color for heart */
+    stroke: #cc0000;
+    stroke-width: 2;
+    transform-origin: 50% 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.ecg-line {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100; /* Adjust based on path length */
+    stroke-dashoffset: 100;
+    animation: drawEcg 3s infinite linear;
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes drawEcg {
+    0% { stroke-dashoffset: 100; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -100; }
+}
+
+
+.form-wrapper {
+    flex: 1; /* Takes up available space */
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* To stack login/register boxes */
+    justify-content: center; /* Center form vertically */
+}
+
+
+.form-box {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-box.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--medium-gray);
+}
+
+.input-group input {
+    width: calc(100% - 60px); /* Adjust for icon and padding */
+    padding: 12px 15px 12px 45px; /* Left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    margin-top: 20px;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.social-login {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.social-login p {
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+
+
+.form-footer {
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: var(--medium-gray);
+}
+
+.form-footer a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .animation-container {
+        padding: 30px 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .form-wrapper {
+        padding: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .input-group input {
+        padding: 10px 15px 10px 40px;
+    }
+
+    .animation-text {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-wrapper {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .animation-container {
+        padding: 20px 10px;
+    }
+
+    .animation-text {
+        font-size: 1.2em;
+    }
+
+    .heartbeat-animation {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .animation-container {
+        padding: 30px 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .form-wrapper {
+        padding: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .input-group input {
+        padding: 10px 15px 10px 40px;
+    }
+
+    .animation-text {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-wrapper {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .animation-container {
+        padding: 20px 10px;
+    }
+
+    .animation-text {
+        font-size: 1.2em;
+    }
+
+    .heartbeat-animation {
+        width: 120px;
+        height: 120px;
+    }
+}
